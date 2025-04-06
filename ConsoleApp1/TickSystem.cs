@@ -8,7 +8,7 @@ namespace PracticalWotkI
         {
             int tick = 1;
             bool running = true;
-            Console.WriteLine("Presiona ENTER para continuar o escribe 'salir' para terminar:");
+            Console.WriteLine("Press ENTER to continue or type 'exit' to end the program:");
 
             while (running)
             {
