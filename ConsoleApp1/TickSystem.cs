@@ -2,7 +2,7 @@ using System;
 
 namespace PracticalWotkI
 {
-    class TickSystem
+    public class TickSystem
     {
         public void Run()
         {
