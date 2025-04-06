@@ -3,38 +3,37 @@ using System;
 namespace PracticalWotkI
 {
     class TickSystem
-{
-    public void Run()
     {
-        int tick = 1;
-        bool running = true;
-        Console.WriteLine("Presiona ENTER para continuar o escribe 'salir' para terminar:");
-
-        while (running)
+        public void Run()
         {
-            if(tick == 1)
+            int tick = 1;
+            bool running = true;
+            Console.WriteLine("Presiona ENTER para continuar o escribe 'salir' para terminar:");
+
+            while (running)
             {
-                Console.WriteLine("--- Begining ---");
-
-                string? input = Console.ReadLine();
-                if (input.ToLower() == "exit")
+                if(tick == 1)
                 {
-                    running = false;
-                }
-            }else
-            {
-                Console.WriteLine("--- 15 minutes ---");
+                    Console.WriteLine("--- Begining ---");
 
-                string? input = Console.ReadLine();
-                if (input.ToLower() == "exit")
+                    string? input = Console.ReadLine();
+                    if (input.ToLower() == "exit")
+                    {
+                        running = false;
+                    }
+                }else
                 {
-                    running = false;
-                }
+                    Console.WriteLine("--- 15 minutes ---");
 
+                    string? input = Console.ReadLine();
+                    if (input.ToLower() == "exit")
+                    {
+                        running = false;
+                    }
+                }
+                tick++;
             }
-            tick++;
         }
     }
-}
 }
 
