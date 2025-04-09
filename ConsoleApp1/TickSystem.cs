@@ -1,5 +1,7 @@
 using System;
 
+//Como podemos implementar??
+
 namespace PracticalWotkI
 {
     public class TickSystem
