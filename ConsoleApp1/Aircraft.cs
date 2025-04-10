@@ -2,6 +2,9 @@ using System;
 
 //Como podemos asignarr pista??
 //Como implementamos el tick?
+//Luego lo implementamos aquí como ticksystem.Advancetick()
+
+
 
 namespace PracticalWotkI
 {

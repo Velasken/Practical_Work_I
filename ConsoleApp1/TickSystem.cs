@@ -1,11 +1,17 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 
 //Como podemos implementar??
+//Aquí ponemos lo que hace el Advance.Tick
 
 namespace PracticalWotkI
 {
     public class TickSystem
     {
+        public void Advancetick()
+        {
+            
+        }
         public void Run()
         {
             int tick = 1;
@@ -25,6 +31,8 @@ namespace PracticalWotkI
                     }
                 }else
                 {
+                    Advancetick();
+
                     Console.WriteLine("--- 15 minutes ---");
 
                     string? input = Console.ReadLine();
