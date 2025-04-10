@@ -6,8 +6,10 @@ namespace PracticalWotkI
     {
         static void Main()
         {
-            TickSystem tickSystem = new TickSystem();
-            tickSystem.Run();
+            /*TickSystem tickSystem = new TickSystem();
+            tickSystem.Run();*/
+            Airport airport = new Airport();
+            int airplanes = airport.PrintAircrafts();
         }
     }
 }

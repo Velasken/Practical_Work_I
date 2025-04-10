@@ -1,5 +1,5 @@
 using System;
-using System.Security.Cryptography.X509Certificates;
+
 
 //Como podemos implementar??
 //Aquí ponemos lo que hace el Advance.Tick
