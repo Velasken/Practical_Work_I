@@ -14,13 +14,13 @@ namespace PracticalWotkI
         }
         public void Run()
         {
-            int tick = 1;
+            int tick = 0;
             bool running = true;
             Console.WriteLine("Press ENTER to continue or type 'exit' to end the program:");
 
             while (running)
             {
-                if(tick == 1)
+                if(tick == 0)
                 {
                     Console.WriteLine("--- Begining ---");
 
