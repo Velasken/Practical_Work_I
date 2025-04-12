@@ -1,13 +1,11 @@
 ﻿using System;
-//Add a method to get out ones I uploded the info
+
 namespace PracticalWotkI
 {
-    class Program
+    public class Program
     {
-        static void Main()
+        public static void Main()
         {
-            /*TickSystem tickSystem = new TickSystem();
-            tickSystem.Run();*/
             Airport airport = new Airport();
 
             int option = airport.PrintAircrafts();
@@ -15,13 +13,12 @@ namespace PracticalWotkI
             while (option >= 1 && option <= airport.GetAircrafts())
             {
                 Console.Clear();
-                Console.WriteLine("Enter aircraft details to update:");
+                Console.WriteLine("Enter aircraft details:");
 
                 airport.AddAircraft(option);
 
                 option = airport.PrintAircrafts();
             }
-            Console.WriteLine("Exited.");
         }
     }
 }

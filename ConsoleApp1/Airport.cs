@@ -51,18 +51,17 @@ namespace PracticalWotkI
 
         public void AddAircraft(int option)
         {
-            Aircraft selected = this.templates[option - 1];
             Aircraft newAircraft = null; //we still don't know wich type of aircraft the user is going to sleect, so we declare the new aircraft as null
 
-            if (selected == Commercial_Aircraft)
+            if (option == 1)
             {
                 newAircraft = new Commercial_Aircraft("Commercial Aircraft", "", 0, 0, 0, 0, 0);
             }
-            else if (selected == 2)
+            else if (option == 2)
             {
                 newAircraft = new Cargo_Aircraft("Cargo Aircraft", "", 0, 0, 0, 0, 0);
             }
-            else if (selected == 3 )
+            else if (option == 3)
             {
                 newAircraft = new Private_Aircraft("Private Aircraft", "", 0, 0, 0, 0, "");
              }
@@ -71,6 +70,7 @@ namespace PracticalWotkI
             {
                 newAircraft.NewAircraft();
                 this.aircraft.Add(newAircraft);
+                Console.WriteLine($"New aircraft added: {newAircraft.GetName()}");
             }
         }
     }
