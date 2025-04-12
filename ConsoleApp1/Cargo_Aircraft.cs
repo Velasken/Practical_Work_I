@@ -14,5 +14,20 @@ namespace PracticalWotkI
         {
             return this.max_load;
         }
+
+        public override void NewAircraft()
+        {
+            Console.Write("Aircrafts ID: ");
+            this.id = Console.ReadLine();
+            Console.Write("Aircrafts Distance to the airport: ");
+            this.distance = Int32.Parse(Console.ReadLine());
+            Console.Write("Aircrafts fuel capacity: ");
+            this.fuel_capacity = Double.Parse(Console.ReadLine());
+            Console.Write("Aircrafts fuel consumption: ");
+            this.fuel_consumption = Double.Parse(Console.ReadLine());
+            this.current_fuel = this.fuel_capacity;
+            Console.Write("Number of passengers: ");
+            this.max_load = Double.Parse(Console.ReadLine());
+        }
     }
 }

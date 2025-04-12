@@ -7,33 +7,35 @@ namespace PracticalWotkI
 {
     public class Airport
     {
+        private List<Aircraft> templates;
         private List<Aircraft> aircraft;
         public Airport()
         {
+            this.templates = new List<Aircraft>();
             this.aircraft = new List<Aircraft>();
 
-            this.aircraft.Add(new Commercial_Aircraft("Commercial Aircraft","", 5, 5, 5, 5, 5));
-            this.aircraft.Add(new Cargo_Aircraft("Cargo Aircraft","", 5, 5, 5, 5, 5));
-            this.aircraft.Add(new Private_Aircraft("Private Aircraft","", 5, 5, 5, 5, ""));
+            this.templates.Add(new Commercial_Aircraft("Commercial Aircraft","", 5, 5, 5, 5, 5));
+            this.templates.Add(new Cargo_Aircraft("Cargo Aircraft","", 5, 5, 5, 5, 5));
+            this.templates.Add(new Private_Aircraft("Private Aircraft","", 5, 5, 5, 5, ""));
         }
 
          public int Exit()
         {
-            return this.aircraft.Count + 1;
+            return this.templates.Count + 1;
         }
 
         public int GetAircrafts()
         {
-            return this.aircraft.Count;
+            return this.templates.Count;
         }
 
         public int PrintAircrafts()
         {
             Console.WriteLine("--------------------------------------");
 
-           for (int i = 1; i <= this.aircraft.Count; i++)
+           for (int i = 1; i <= this.templates.Count; i++)
            {
-                Console.WriteLine($" {i}. {this.aircraft[i - 1].GetName()}");
+                Console.WriteLine($" {i}. {this.templates[i - 1].GetName()}");
            }
 
            Console.WriteLine($" {this.Exit()}. Exit");
@@ -49,7 +51,27 @@ namespace PracticalWotkI
 
         public void AddAircraft(int option)
         {
-            this.aircraft[option-1].NewAircraft();
+            Aircraft selected = this.templates[option - 1];
+            Aircraft newAircraft = null; //we still don't know wich type of aircraft the user is going to sleect, so we declare the new aircraft as null
+
+            if (selected == Commercial_Aircraft)
+            {
+                newAircraft = new Commercial_Aircraft("Commercial Aircraft", "", 0, 0, 0, 0, 0);
+            }
+            else if (selected == 2)
+            {
+                newAircraft = new Cargo_Aircraft("Cargo Aircraft", "", 0, 0, 0, 0, 0);
+            }
+            else if (selected == 3 )
+            {
+                newAircraft = new Private_Aircraft("Private Aircraft", "", 0, 0, 0, 0, "");
+             }
+
+            if (newAircraft != null)
+            {
+                newAircraft.NewAircraft();
+                this.aircraft.Add(newAircraft);
+            }
         }
     }
 }
