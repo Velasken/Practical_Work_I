@@ -63,46 +63,4 @@ namespace PracticalWotkI
             }
         }
     }
-
-    public class Commercial_Aircraft : Aircraft
-    {
-        private int passengers;
-        public Commercial_Aircraft(string id, int distance, double fuel_capacity, double fuel_consumption, double current_fuel, int passengers) : base(id, distance, fuel_capacity, fuel_consumption, current_fuel)
-        {
-            this.passengers = passengers;
-        }
-
-        public int GetPassengers()
-        {
-            return this.passengers;
-        }
-    }
-
-    public class Cargo_Aircraft : Aircraft
-    {
-        private double max_load;
-        public Cargo_Aircraft(string id, int distance, double fuel_capacity, double fuel_consumption, double current_fuel, double max_load) : base(id, distance, fuel_capacity, fuel_consumption, current_fuel)
-        {
-            this.max_load = max_load;
-        }
-
-        public double GetMaxLoad()
-        {
-            return this.max_load;
-        }
-    }
-
-    public class Private_Aircraft : Aircraft
-    {
-        private string owner;
-        public Private_Aircraft(string id, int distance, double fuel_capacity, double fuel_consumption, double current_fuel, string owner) : base(id, distance, fuel_capacity, fuel_consumption, current_fuel)
-        {
-            this.owner = owner;
-        }
-
-        public string GetOwner()
-        {
-            return this.owner;
-        }
-    }
 }
