@@ -26,7 +26,7 @@ namespace PracticalWotkI
             Console.Write("Aircrafts fuel consumption: ");
             this.fuel_consumption = Double.Parse(Console.ReadLine());
             this.current_fuel = this.fuel_capacity;
-            Console.Write("Number of passengers: ");
+            Console.Write("Name of the owner: ");
             this.owner = Console.ReadLine();
         }
     }

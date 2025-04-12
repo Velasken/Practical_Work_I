@@ -9,11 +9,6 @@ namespace PracticalWotkI
         {
             this.passengers = passengers;
         }
-
-        public void SetID(string newid)
-        {
-            this.id = newid;
-        }
         public int GetPassengers()
         {
             return this.passengers;
