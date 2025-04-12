@@ -10,14 +10,16 @@ namespace PracticalWotkI
 {
     public class Aircraft
     {
+        protected string name;
         protected string id;
         protected int distance;
         protected double fuel_capacity;
         protected double fuel_consumption;
         protected double current_fuel;
 
-        public Aircraft(string id, int distance, double fuel_capacity, double fuel_consumption, double current_fuel)
+        public Aircraft(string name, string id, int distance, double fuel_capacity, double fuel_consumption, double current_fuel)
         {
+            this.name = name;
             this.id = id;
             this.distance = distance;
             this.fuel_capacity = fuel_capacity;
@@ -25,6 +27,10 @@ namespace PracticalWotkI
             this.current_fuel = current_fuel;
         }
 
+        public string GetName()
+        {
+            return this.name;
+        }
         public string GetID()
         {
             return this.id;
@@ -61,6 +67,10 @@ namespace PracticalWotkI
             {
 
             }
+        }
+        public virtual void NewAircraft()
+        {
+
         }
     }
 }

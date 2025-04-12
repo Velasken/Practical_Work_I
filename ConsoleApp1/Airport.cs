@@ -12,9 +12,9 @@ namespace PracticalWotkI
         {
             this.aircraft = new List<Aircraft>();
 
-            this.aircraft.Add(new Commercial_Aircraft("Commercial Aircraft", 5, 5, 5, 5, 5));
-            this.aircraft.Add(new Cargo_Aircraft("Cargo Aircraft", 5, 5, 5, 5, 5));
-            this.aircraft.Add(new Private_Aircraft("Private Aircraft", 5, 5, 5, 5, ""));
+            this.aircraft.Add(new Commercial_Aircraft("Commercial Aircraft","", 5, 5, 5, 5, 5));
+            this.aircraft.Add(new Cargo_Aircraft("Cargo Aircraft","", 5, 5, 5, 5, 5));
+            this.aircraft.Add(new Private_Aircraft("Private Aircraft","", 5, 5, 5, 5, ""));
         }
 
          public int Exit()
@@ -33,7 +33,7 @@ namespace PracticalWotkI
 
            for (int i = 1; i <= this.aircraft.Count; i++)
            {
-                Console.WriteLine($" {i}. {this.aircraft[i - 1].GetID()}");
+                Console.WriteLine($" {i}. {this.aircraft[i - 1].GetName()}");
            }
 
            Console.WriteLine($" {this.Exit()}. Exit");
@@ -49,7 +49,7 @@ namespace PracticalWotkI
 
         public void AddAircraft(int option)
         {
-            
+            this.aircraft[option-1].NewAircraft();
         }
     }
 }
