@@ -16,6 +16,14 @@ namespace PracticalWotkI
         protected double fuel_capacity;
         protected double fuel_consumption;
         protected double current_fuel;
+        protected Status status;
+        protected enum Status
+        {
+            InFlight,
+            Waiting,
+            Landing,
+            OnGround
+        }
 
         public Aircraft(string name, string id, int distance, double fuel_capacity, double fuel_consumption, double current_fuel)
         {
