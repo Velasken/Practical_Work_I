@@ -19,7 +19,7 @@ namespace PracticalWotkI
             this.templates.Add(new Private_Aircraft("Private Aircraft","", 5, 5, 5, 5, ""));
         }
 
-         public int Exit()
+        public int GoBack()
         {
             return this.templates.Count + 1;
         }
@@ -32,13 +32,17 @@ namespace PracticalWotkI
         public int PrintAircrafts()
         {
             Console.WriteLine("--------------------------------------");
+            Console.WriteLine("||||||||||||||| Air UFV ||||||||||||||");
+            Console.WriteLine("--------------------------------------");
 
            for (int i = 1; i <= this.templates.Count; i++)
            {
                 Console.WriteLine($" {i}. {this.templates[i - 1].GetName()}");
            }
 
-           Console.WriteLine($" {this.Exit()}. Exit");
+           Console.WriteLine($" {this.GoBack()}. Go Back");
+           Console.WriteLine("--------------------------------------");
+           Console.WriteLine("||||||||||||||||||||||||||||||||||||||");
            Console.WriteLine("--------------------------------------");
 
            string? tmp = Console.ReadLine();
@@ -64,13 +68,14 @@ namespace PracticalWotkI
             else if (option == 3)
             {
                 newAircraft = new Private_Aircraft("Private Aircraft", "", 0, 0, 0, 0, "");
-             }
+            }
 
             if (newAircraft != null)
             {
                 newAircraft.NewAircraft();
                 this.aircraft.Add(newAircraft);
                 Console.WriteLine($"New aircraft added: {newAircraft.GetName()}");
+                Console.Write("\n");
             }
         }
     }

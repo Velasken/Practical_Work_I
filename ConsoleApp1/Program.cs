@@ -6,18 +6,21 @@ namespace PracticalWotkI
     {
         public static void Main()
         {
-            Airport airport = new Airport();
+            Console.WriteLine("--------------------------------------");
+            Console.WriteLine("||||||||||||||| Air UFV ||||||||||||||");
+            Menu menu = new Menu();
 
-            int option = airport.PrintAircrafts();
+            int option = menu.PrintOptions();
 
-            while (option >= 1 && option <= airport.GetAircrafts())
+            while (option >= 1 && option <= menu.GetOptions())
             {
                 Console.Clear();
-                Console.WriteLine("Enter aircraft details:");
+                menu.Selection(option);
+                Console.Write("\n");
 
-                airport.AddAircraft(option);
-
-                option = airport.PrintAircrafts();
+                Console.WriteLine("--------------------------------------");
+                Console.WriteLine("||||||||||||||| Air UFV ||||||||||||||");
+                option = menu.PrintOptions();
             }
         }
     }
