@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\svc_admin\\.nuget\\packages\\": {}
+    "C:\\Users\\jaime\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\svc_admin\\OneDrive - UFV\\Practical_Work_I\\Practical_Work_I\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectUniqueName": "C:\\Users\\jaime\\.net\\practical work 1\\Practical work 1\\Practical_Work_I\\ConsoleApp1\\ConsoleApp1.csproj",
       "projectName": "ConsoleApp1",
-      "projectPath": "C:\\Users\\svc_admin\\OneDrive - UFV\\Practical_Work_I\\Practical_Work_I\\ConsoleApp1\\ConsoleApp1.csproj",
-      "packagesPath": "C:\\Users\\svc_admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\svc_admin\\OneDrive - UFV\\Practical_Work_I\\Practical_Work_I\\ConsoleApp1\\obj\\",
+      "projectPath": "C:\\Users\\jaime\\.net\\practical work 1\\Practical work 1\\Practical_Work_I\\ConsoleApp1\\ConsoleApp1.csproj",
+      "packagesPath": "C:\\Users\\jaime\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jaime\\.net\\practical work 1\\Practical work 1\\Practical_Work_I\\ConsoleApp1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\svc_admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\jaime\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
