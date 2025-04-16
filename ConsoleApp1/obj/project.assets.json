@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\jaime\\.nuget\\packages\\": {}
+    "/Users/alfonsolozano/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jaime\\.net\\practical work 1\\Practical work 1\\Practical_Work_I\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectUniqueName": "/Users/alfonsolozano/PW2/Practical_Work_I/ConsoleApp1/ConsoleApp1.csproj",
       "projectName": "ConsoleApp1",
-      "projectPath": "C:\\Users\\jaime\\.net\\practical work 1\\Practical work 1\\Practical_Work_I\\ConsoleApp1\\ConsoleApp1.csproj",
-      "packagesPath": "C:\\Users\\jaime\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jaime\\.net\\practical work 1\\Practical work 1\\Practical_Work_I\\ConsoleApp1\\obj\\",
+      "projectPath": "/Users/alfonsolozano/PW2/Practical_Work_I/ConsoleApp1/ConsoleApp1.csproj",
+      "packagesPath": "/Users/alfonsolozano/.nuget/packages/",
+      "outputPath": "/Users/alfonsolozano/PW2/Practical_Work_I/ConsoleApp1/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jaime\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/alfonsolozano/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -64,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.405/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.405/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
