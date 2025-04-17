@@ -9,6 +9,9 @@ namespace PracticalWotkI
         private string id;
         private RunwayStatus status;
 
+        private string CurrentAircraft;
+        private int TicksAvailability = 3;
+
         private enum RunwayStatus
         {
             Free,
@@ -20,6 +23,18 @@ namespace PracticalWotkI
         {
             this.id = id;
             this.status = RunwayStatus.Free;
+            this.CurrentAircraft = "";
+
+        }
+
+        public void RequestRunway(String AircraftId)
+        {
+            do{
+                if (this.status == 0)
+                {
+                    CurrentAircraft = AircraftId;
+                }
+            }while (CurrentAircraft == "");
         }
 
         public string GetID()
