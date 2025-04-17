@@ -17,7 +17,7 @@ namespace PracticalWotkI
         protected double fuel_consumption;
         protected double current_fuel;
         protected Status status;
-        protected enum Status
+        public enum Status
         {
             InFlight,
             Waiting,
@@ -33,6 +33,7 @@ namespace PracticalWotkI
             this.fuel_capacity = fuel_capacity;
             this.fuel_consumption = fuel_consumption;
             this.current_fuel = current_fuel;
+            this.status = Status.InFlight; 
         }
 
         public string GetName()
@@ -62,6 +63,10 @@ namespace PracticalWotkI
          public double GetCurrentFuel()
         {
             return this.current_fuel;
+        }
+         public Status GetStatus()
+        {
+            return this.status;
         }
 
         public void PrintDistance(int distance)
