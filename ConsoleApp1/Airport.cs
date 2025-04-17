@@ -78,5 +78,17 @@ namespace PracticalWotkI
                 Console.Write("\n");
             }
         }
+        public void RemoveLandedAircraft()
+        {                
+            for (int i = this.aircraft.Count - 1; i >= 0; i--)
+            {                    
+                Aircraft currentAircraft = this.aircraft[i];
+
+                if (currentAircraft.GetStatus() == "OnGround")
+                {
+                    this.aircraft.RemoveAt(i);
+                }
+            }
+        }
     }
 }
