@@ -15,6 +15,11 @@ namespace PracticalWotkI
             return this.owner;
         }
 
+        public Status GetStatus()
+        {
+            return this.status;
+        }
+
         public override void NewAircraft()
         {
             Console.Write("Aircrafts ID: ");

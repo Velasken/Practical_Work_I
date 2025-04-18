@@ -1,9 +1,6 @@
 using System;
 
 
-//Como podemos implementar??
-//Aquí ponemos lo que hace el Advance.Tick
-
 namespace PracticalWotkI
 {
     public class TickSystem
@@ -36,6 +33,7 @@ namespace PracticalWotkI
                     airport.AdvanceTick();
 
                     Console.WriteLine("--- 15 minutes ---");
+                    airport.ShowStatus();
 
                     string? input = Console.ReadLine();
                     if (input.ToLower() == "exit")

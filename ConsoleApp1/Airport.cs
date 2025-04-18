@@ -105,6 +105,14 @@ namespace PracticalWotkI
 
             RemoveLandedAircraft();
         }
+
+        public void ShowStatus()
+        {
+            foreach (var i in this.aircraft)
+            {
+                Console.WriteLine(i.GetStatus());
+            }
+        }
         
     }
 }

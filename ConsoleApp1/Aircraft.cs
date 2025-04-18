@@ -64,7 +64,7 @@ namespace PracticalWotkI
         {
             return this.current_fuel;
         }
-         public Status GetStatus()
+        public Status GetStatus()
         {
             return this.status;
         }
