@@ -73,9 +73,7 @@ namespace PracticalWotkI
         {
             if(distance > 0)
             {
-                Console.Clear();
-                Console.WriteLine($"{this.id} in flight {this.distance} km");
-                Console.ReadLine();
+                this.status = Status.InFlight;
             }else if (distance == 0)
             {
 
@@ -86,7 +84,7 @@ namespace PracticalWotkI
         {
             if (this.distance > 0)
             {
-                this.distance -= 15; //15 mins de vuelo
+                this.distance -= 215; //15 mins de vuelo
                 if (this.distance <= 0)
                 {
                     this.distance = 0;

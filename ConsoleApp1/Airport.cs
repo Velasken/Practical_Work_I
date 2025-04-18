@@ -100,6 +100,8 @@ namespace PracticalWotkI
                 {
                     i.UpdateDistance();
                     i.UpdateFuel();
+                    Console.WriteLine(i.GetDistance());
+                    Console.WriteLine(i.GetCurrentFuel());
                 }
             }
 
