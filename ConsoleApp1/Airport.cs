@@ -84,11 +84,26 @@ namespace PracticalWotkI
             {                    
                 Aircraft currentAircraft = this.aircraft[i];
 
-                if (currentAircraft.GetStatus() == "OnGround")
+                if (currentAircraft.GetStatus() == Aircraft.Status.OnGround)
                 {
                     this.aircraft.RemoveAt(i);
                 }
             }
+        }
+
+        public void AdvanceTick()
+        {
+            
+            foreach (var i in this.aircraft)
+            {
+                if (i.GetStatus() == Aircraft.Status.InFlight)
+                {
+                    i.UpdateDistance();
+                    i.UpdateFuel();
+                }
+            }
+
+            RemoveLandedAircraft();
         }
         
     }

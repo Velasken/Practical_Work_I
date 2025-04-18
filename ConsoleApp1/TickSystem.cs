@@ -8,19 +8,11 @@ namespace PracticalWotkI
 {
     public class TickSystem
     {
-        public void AdvanceTick()
-        {
-            
-            foreach (var i in this.aircraft)
-            {
-                if (i.GetStatus() == Aircraft.Status.InFlight)
-                {
-                    i.UpdateDistance();
-                    i.UpdateFuel();
-                }
-            }
+        private Airport airport;
 
-            RemoveLandedAircraft();
+        public TickSystem()
+        {
+            airport = new Airport();
         }
         public void Run()
         {
@@ -41,7 +33,7 @@ namespace PracticalWotkI
                     }
                 }else
                 {
-                    Advancetick();
+                    airport.AdvanceTick();
 
                     Console.WriteLine("--- 15 minutes ---");
 
