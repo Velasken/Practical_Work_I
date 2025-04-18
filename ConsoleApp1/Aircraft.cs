@@ -81,6 +81,30 @@ namespace PracticalWotkI
 
             }
         }
+        
+        public void UpdateDistance()
+        {
+            if (this.distance > 0)
+            {
+                this.distance -= 15; //15 mins de vuelo
+                if (this.distance <= 0)
+                {
+                    this.distance = 0;
+                    this.status = Status.Waiting;
+                }
+            }
+        }
+        
+        public void UpdateFuel()
+        {
+            this.current_fuel -= this.fuel_consumption * 15; //15 mins
+            if (this.current_fuel <= 0)
+            {
+                this.current_fuel = 0;
+                this.status = Status.OnGround; // Aterrizaje forzado
+            }
+        }
+        
         public virtual void NewAircraft()
         {
 
