@@ -8,9 +8,19 @@ namespace PracticalWotkI
 {
     public class TickSystem
     {
-        public void Advancetick()
+        public void AdvanceTick()
         {
             
+            foreach (var i in this.aircraft)
+            {
+                if (i.GetStatus() == Aircraft.Status.InFlight)
+                {
+                    i.UpdateDistance();
+                    i.UpdateFuel();
+                }
+            }
+
+            RemoveLandedAircraft();
         }
         public void Run()
         {
