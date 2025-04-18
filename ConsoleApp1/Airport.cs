@@ -90,19 +90,6 @@ namespace PracticalWotkI
                 }
             }
         }
-        public void AdvanceTick()
-        {
-            
-            foreach (var i in this.aircraft)
-            {
-                if (i.GetStatus() == Aircraft.Status.InFlight)
-                {
-                    i.UpdateDistance();
-                    i.UpdateFuel();
-                }
-            }
-
-            RemoveLandedAircraft();
-        }
+        
     }
 }
