@@ -4,8 +4,8 @@ namespace PracticalWotkI
 {
     public class Airport
     {
-        private List<Aircraft> templates;
-        private List<Aircraft> aircraft;
+        public List<Aircraft> templates;
+        public List<Aircraft> aircraft;
         public Airport()
         {
             this.templates = new List<Aircraft>();
@@ -93,20 +93,17 @@ namespace PracticalWotkI
         }
 
         public void AdvanceTick()
-        {
-            for (int i = 1; i <= this.aircraft.Count; i++)
-           {
-                Console.WriteLine($" {i}. {this.aircraft[i - 1].GetName()}");
-           }
-            
-            foreach (var i in this.aircraft)
+        {   
+            foreach (var aircraft in this.aircraft)
             {
-                if (i.GetStatus() == Aircraft.Status.InFlight)
+                if (aircraft.GetStatus() == Aircraft.Status.InFlight)
                 {
-                    i.UpdateDistance();
-                    i.UpdateFuel();
-                    Console.WriteLine(i.GetDistance());
-                    Console.WriteLine(i.GetCurrentFuel());
+                    aircraft.UpdateDistance();
+                    aircraft.UpdateFuel();
+                    
+                    Console.WriteLine($"Aircraft: {aircraft.GetID()}");
+                    Console.WriteLine($"Distance to airport: {aircraft.GetDistance()} km");
+                    Console.WriteLine($"Current fuel: {aircraft.GetCurrentFuel()} L");
                 }
             }
 
@@ -115,9 +112,9 @@ namespace PracticalWotkI
 
         public void ShowStatus()
         {
-            foreach (var i in this.aircraft)
+            foreach (var aircraft in this.aircraft)
             {
-                i.GetStatus();
+                Console.WriteLine($"Status: {aircraft.GetStatus()}");
             }
         }
         

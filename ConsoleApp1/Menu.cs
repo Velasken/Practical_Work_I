@@ -5,9 +5,11 @@ namespace PracticalWotkI
     public class Menu
     {
         private List<Options> options;
+        private Airport airport;
 
        public Menu()
        {
+          this.airport = new Airport();
           this.options = new List<Options>();
 
           this.options.Add(new Load_File("Load flight from file"));
@@ -56,8 +58,6 @@ namespace PracticalWotkI
                     Console.WriteLine("Loading aircrafts from file");
                     break;
                 case 2:
-                    Airport airport = new Airport();
-
                     int aircraftOption = airport.PrintAircrafts();
 
                     while (aircraftOption >= 1 && aircraftOption <= airport.GetAircrafts())
@@ -71,7 +71,7 @@ namespace PracticalWotkI
                     };
                     break;
                 case 3:
-                    TickSystem tickSystem = new TickSystem();
+                    TickSystem tickSystem = new TickSystem(airport);
                     tickSystem.Run();
                     break;
                 case 4:
