@@ -1,11 +1,5 @@
 using System;
 
-//Como podemos asignarr pista??
-//Como implementamos el tick?
-//Luego lo implementamos aquí como ticksystem.Advancetick()
-
-
-
 namespace PracticalWotkI
 {
     public class Aircraft
@@ -67,17 +61,6 @@ namespace PracticalWotkI
         public Status GetStatus()
         {
             return this.status;
-        }
-
-        public void PrintDistance(int distance)
-        {
-            if(distance > 0)
-            {
-                this.status = Status.InFlight;
-            }else if (distance == 0)
-            {
-
-            }
         }
         
         public void UpdateDistance()

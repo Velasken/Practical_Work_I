@@ -1,18 +1,16 @@
 using System;
 
-//Luego lo implementamos aquí como ticksystem.Advancetick()
-
 namespace PracticalWotkI
 {
     public class Runway
     {
-        private string id;
-        private RunwayStatus status;
+        protected string id;
+        protected RunwayStatus status;
 
-        private string CurrentAircraft;
-        private int TicksAvailability = 3;
+        protected string CurrentAircraft;
+        protected int TicksAvailability = 3;
 
-        private enum RunwayStatus
+        public enum RunwayStatus
         {
             Free,
             Occupied
@@ -27,7 +25,7 @@ namespace PracticalWotkI
 
         }
 
-        public void RequestRunway(String AircraftId)
+        public void RequestRunway(string AircraftId)
         {
             do{
                 if (this.status == 0)
@@ -42,9 +40,9 @@ namespace PracticalWotkI
             return this.id;
         }
 
-        public string GetStatus()
+        public RunwayStatus GetStatus()
         {
-            return this.status.ToString();
+            return this.status;
         }
     }
 }

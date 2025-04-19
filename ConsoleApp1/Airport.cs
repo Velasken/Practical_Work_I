@@ -1,8 +1,5 @@
 using System;
 
-//Luego lo implementamos aquí como ticksystem.Advancetick()
-
-
 namespace PracticalWotkI
 {
     public class Airport
@@ -38,6 +35,10 @@ namespace PracticalWotkI
            for (int i = 1; i <= this.templates.Count; i++)
            {
                 Console.WriteLine($" {i}. {this.templates[i - 1].GetName()}");
+           }
+           for (int i = 1; i <= this.aircraft.Count; i++)
+           {
+                Console.WriteLine($" {i}. {this.aircraft[i - 1].GetName()}");
            }
 
            Console.WriteLine($" {this.GoBack()}. Go Back");
@@ -93,6 +94,10 @@ namespace PracticalWotkI
 
         public void AdvanceTick()
         {
+            for (int i = 1; i <= this.aircraft.Count; i++)
+           {
+                Console.WriteLine($" {i}. {this.aircraft[i - 1].GetName()}");
+           }
             
             foreach (var i in this.aircraft)
             {
@@ -112,7 +117,7 @@ namespace PracticalWotkI
         {
             foreach (var i in this.aircraft)
             {
-                Console.WriteLine(i.GetStatus());
+                i.GetStatus();
             }
         }
         

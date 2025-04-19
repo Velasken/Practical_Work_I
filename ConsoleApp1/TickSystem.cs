@@ -1,16 +1,9 @@
 using System;
 
-
 namespace PracticalWotkI
 {
     public class TickSystem
     {
-        private Airport airport;
-
-        public TickSystem()
-        {
-            airport = new Airport();
-        }
         public void Run()
         {
             int tick = 0;
@@ -30,10 +23,9 @@ namespace PracticalWotkI
                     }
                 }else
                 {
-                    airport.AdvanceTick();
-
                     Console.WriteLine("--- 15 minutes ---");
-                    airport.ShowStatus();
+                    AdvanceTick();
+                    ShowStatus();
 
                     string? input = Console.ReadLine();
                     if (input.ToLower() == "exit")

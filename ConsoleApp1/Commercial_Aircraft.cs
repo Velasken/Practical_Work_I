@@ -19,6 +19,31 @@ namespace PracticalWotkI
             return this.status;
         }
 
+        public string GetID()
+        {
+            return this.id;
+        }
+
+        public int GetDistance()
+        {
+            return this.distance;
+        }
+
+        public double GetFUelCapacity()
+        {
+            return this.fuel_capacity;
+        }
+
+         public double GetFUelConsumption()
+        {
+            return this.fuel_consumption;
+        }
+
+         public double GetCurrentFuel()
+        {
+            return this.current_fuel;
+        }
+
         public override void NewAircraft()
         {
             Console.Write("Aircrafts ID: ");
