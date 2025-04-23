@@ -22,6 +22,11 @@ namespace PracticalWotkI
                 {
                     Console.WriteLine("--- Begining ---");
                     string? input = Console.ReadLine();
+                    if (airport.GetAircraftsCount() == 0)
+                    {
+                        Console.WriteLine("No aircrafts loaded");
+                        running = false;
+                    }
                     if (input.ToLower() == "exit")
                     {
                         running = false;
@@ -29,6 +34,11 @@ namespace PracticalWotkI
                 }else
                 {
                     Console.WriteLine("--- 15 minutes ---");
+                    if (airport.GetAircraftsCount() == 0)
+                    {
+                        Console.WriteLine("No more aircrafts left in the simulation");
+                        running = false;
+                    }
                     airport.AdvanceTick();
                     airport.ShowStatus();
 

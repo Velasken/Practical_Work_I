@@ -165,6 +165,11 @@ namespace PracticalWotkI
                 }
             }
         }
+        
+        public int GetAircraftsCount()
+        {
+            return this.aircraft.Count;
+        }
 
         public void AdvanceTick()
         {   
@@ -178,9 +183,23 @@ namespace PracticalWotkI
                     Console.WriteLine($"Aircraft: {aircraft.GetID()}");
                     Console.WriteLine($"Distance to airport: {aircraft.GetDistance()} km");
                     Console.WriteLine($"Current fuel: {aircraft.GetCurrentFuel()} L");
+                }else if(aircraft.GetStatus() == Aircraft.Status.Waiting)
+                {
+                    aircraft.UpdateFuel();
+
+                    Console.WriteLine($"Aircraft: {aircraft.GetID()}");
+                    Console.WriteLine($"Distance to airport: 0 km");
+                    Console.WriteLine($"Current fuel: {aircraft.GetCurrentFuel()} L");
+
+                }else if(aircraft.GetStatus() == Aircraft.Status.Landing)
+                {
+                    aircraft.UpdateFuel();
+
+                    Console.WriteLine($"Aircraft: {aircraft.GetID()}");
+                    Console.WriteLine($"Distance to airport: 0 km");
+                    Console.WriteLine($"Current fuel: {aircraft.GetCurrentFuel()} L");
                 }
             }
-
             RemoveLandedAircraft();
         }
 
