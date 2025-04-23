@@ -36,10 +36,6 @@ namespace PracticalWotkI
            {
                 Console.WriteLine($" {i}. {this.templates[i - 1].GetName()}");
            }
-           for (int i = 1; i <= this.aircraft.Count; i++)
-           {
-                Console.WriteLine($" {i}. {this.aircraft[i - 1].GetName()}");
-           }
 
            Console.WriteLine($" {this.GoBack()}. Go Back");
            Console.WriteLine("--------------------------------------");

@@ -78,7 +78,7 @@ namespace PracticalWotkI
         
         public void UpdateFuel()
         {
-            this.current_fuel -= this.fuel_consumption * 15; //15 mins
+            this.current_fuel -= this.fuel_consumption; //15 mins
             if (this.current_fuel <= 0)
             {
                 this.current_fuel = 0;
