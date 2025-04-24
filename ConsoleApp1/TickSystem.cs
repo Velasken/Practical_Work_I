@@ -38,14 +38,16 @@ namespace PracticalWotkI
                     {
                         Console.WriteLine("No more aircrafts left in the simulation");
                         running = false;
-                    }
-                    airport.AdvanceTick();
-                    airport.ShowStatus();
-
-                    string? input = Console.ReadLine();
-                    if (input.ToLower() == "exit")
+                    }else
                     {
-                        running = false;
+                        airport.AdvanceTick();
+                        airport.ShowStatus();
+
+                        string? input = Console.ReadLine();
+                        if (input.ToLower() == "exit")
+                        {
+                            running = false;
+                        }
                     }
                 }
                 tick++;
