@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 namespace PracticalWotkI
 {
@@ -49,12 +50,12 @@ namespace PracticalWotkI
             return this.fuel_capacity;
         }
 
-         public double GetFUelConsumption()
+        public double GetFUelConsumption()
         {
             return this.fuel_consumption;
         }
 
-         public double GetCurrentFuel()
+        public double GetCurrentFuel()
         {
             return this.current_fuel;
         }

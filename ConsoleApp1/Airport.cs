@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 namespace PracticalWotkI
 {
@@ -207,7 +208,7 @@ namespace PracticalWotkI
         {
             foreach (var aircraft in this.aircraft)
             {
-                Console.WriteLine($"Status: {aircraft.GetStatus()}");
+                Console.WriteLine($"Aircraft Status: {aircraft.GetStatus()}");
             }
         }
         
