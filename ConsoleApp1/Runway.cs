@@ -3,7 +3,7 @@ using System.IO;
 
 namespace PracticalWotkI
 {
-    public class Runway
+    public class Runway 
     {
         protected string id;
         protected RunwayStatus status;
@@ -18,22 +18,33 @@ namespace PracticalWotkI
         }
         
 
-        public Runway(string id)
+        public Runway(string id, RunwayStatus status,string CurrentAircraft)
         {
             this.id = id;
             this.status = RunwayStatus.Free;
-            this.CurrentAircraft = "";
+            this.CurrentAircraft = CurrentAircraft;
 
         }
+        string[,] runways = {
+                {"Runway_1","Free",""},
+                {"Runway_2","Free",""}
+            };
 
         public void RequestRunway(string AircraftId)
         {
-            do{
-                if (this.status == 0)
+            
+            for(int i = 0; i<=1; i++)
+            {
+                if(runways[i,1] == "Free")
                 {
-                    CurrentAircraft = AircraftId;
+                    runways[i,1] = "Occupied";
+                    runways[i,2] = AircraftId;
+                    i=2;
                 }
-            }while (CurrentAircraft == "");
+                
+                
+            }
+            
         }
 
         public string GetID()

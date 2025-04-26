@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Security.Cryptography.X509Certificates;
 
 namespace PracticalWotkI
 {
@@ -7,6 +8,7 @@ namespace PracticalWotkI
     {
         private List<Options> options;
         private Airport airport;
+        
 
        public Menu()
        {
@@ -59,6 +61,7 @@ namespace PracticalWotkI
                     Console.WriteLine("Loading aircrafts from file");
                     break;
                 case 2:
+                    Runway runway;
                     int aircraftOption = airport.PrintAircrafts();
 
                     while (aircraftOption >= 1 && aircraftOption <= airport.GetAircrafts())
@@ -85,6 +88,7 @@ namespace PracticalWotkI
     {
         public List<Aircraft> templates;
         public List<Aircraft> aircraft;
+        public List<Runway> runways;
         public Airport()
         {
             this.templates = new List<Aircraft>();
@@ -93,6 +97,12 @@ namespace PracticalWotkI
             this.templates.Add(new Commercial_Aircraft("Commercial Aircraft","", 5, 5, 5, 5, 5));
             this.templates.Add(new Cargo_Aircraft("Cargo Aircraft","", 5, 5, 5, 5, 5));
             this.templates.Add(new Private_Aircraft("Private Aircraft","", 5, 5, 5, 5, ""));
+
+            this.runways = new List<Runway>();
+
+            this.runways.Add(new Runway("Runway_1",Runway.RunwayStatus.Free,""));
+            this.runways.Add(new Runway("Runway_2",Runway.RunwayStatus.Free,""));
+            
         }
 
         public int GoBack()
@@ -195,6 +205,7 @@ namespace PracticalWotkI
                 }else if(aircraft.GetStatus() == Aircraft.Status.Landing)
                 {
                     aircraft.UpdateFuel();
+                    
 
                     Console.WriteLine($"Aircraft: {aircraft.GetID()}");
                     Console.WriteLine($"Distance to airport: 0 km");
