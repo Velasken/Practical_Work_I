@@ -202,6 +202,15 @@ namespace PracticalWotkI
                     Console.WriteLine($"Distance to airport: 0 km");
                     Console.WriteLine($"Current fuel: {aircraft.GetCurrentFuel()} L");
 
+                    foreach (var runway in this.runways)
+                    {
+                        if (runway.GetStatus() == Runway.RunwayStatus.Free)
+                        {
+                            runway.RequestRunway(aircraft.GetID());
+                            break;
+                        }
+                    }
+
                 }else if(aircraft.GetStatus() == Aircraft.Status.Landing)
                 {
                     aircraft.UpdateFuel();
@@ -220,6 +229,10 @@ namespace PracticalWotkI
             foreach (var aircraft in this.aircraft)
             {
                 Console.WriteLine($"Aircraft Status: {aircraft.GetStatus()}");
+            }
+            foreach (Runway runway in runways)
+            {
+                Console.WriteLine(runway.GetStatus());
             }
         }
         

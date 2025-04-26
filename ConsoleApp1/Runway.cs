@@ -32,17 +32,15 @@ namespace PracticalWotkI
 
         public void RequestRunway(string AircraftId)
         {
-            
-            for(int i = 0; i<=1; i++)
+            if (this.status == RunwayStatus.Free)
             {
-                if(runways[i,1] == "Free")
-                {
-                    runways[i,1] = "Occupied";
-                    runways[i,2] = AircraftId;
-                    i=2;
-                }
-                
-                
+                this.status = RunwayStatus.Occupied;
+                this.CurrentAircraft = AircraftId;
+                Console.WriteLine($"{this.id} assigned to aircraft {AircraftId}");
+            }
+            else
+            {
+                Console.WriteLine($"{this.id} is not available.");
             }
             
         }
