@@ -59,6 +59,7 @@ namespace PracticalWotkI
             {
                 case 1:
                     Console.WriteLine("Loading aircrafts from file");
+                    airport.LoadFlightsFromFile();
                     break;
                 case 2:
                     Runway runway;
@@ -233,6 +234,88 @@ namespace PracticalWotkI
             foreach (var runway in runways)
             {
                 Console.WriteLine($"{runway.GetID()}: {runway.GetStatus()}");
+            }
+        }
+        public void LoadFlightsFromFile()
+        {
+            Console.Write("Enter the file name: ");
+            string fileName = Console.ReadLine();
+
+            if (fileName == null)
+            {
+                Console.WriteLine("Invalid file name.");
+                return;
+            }
+
+            try
+            {
+                
+                var path = $"../../{fileName}";
+                
+                if (!File.Exists(path))
+                {
+                    Console.WriteLine("File does not exist.");
+                    return;
+                }
+
+                using (StreamReader sr = File.OpenText(path))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        string[] parts = line.Split(',');
+
+                        if (parts.Length < 6)
+                        {
+                            Console.WriteLine($"Invalid format in line: {line}");
+                            continue;
+                        }
+
+                        string type = parts[0].Trim();
+                        string id = parts[1].Trim();
+                        int distance = int.Parse(parts[2].Trim());
+                        double fuelCapacity = double.Parse(parts[3].Trim());
+                        double fuelConsumption = double.Parse(parts[4].Trim());
+                        double currentFuel = double.Parse(parts[5].Trim());
+
+                        Aircraft newAircraft = null;
+
+                        switch (type.ToLower())
+                        {
+                            case "commercial":
+                                int passengers = int.Parse(parts[6].Trim());
+                                newAircraft = new Commercial_Aircraft("Commercial Aircraft", id, distance, fuelCapacity, 
+                                    fuelConsumption, currentFuel, passengers);
+                                break;
+
+                            case "cargo":
+                                double maxLoad = double.Parse(parts[6].Trim());
+                                newAircraft = new Cargo_Aircraft("Cargo Aircraft", id, distance, fuelCapacity, 
+                                    fuelConsumption, currentFuel, maxLoad);
+                                break;
+
+                            case "private":
+                                string owner = parts[6].Trim();
+                                newAircraft = new Private_Aircraft("Private Aircraft", id, distance, fuelCapacity, 
+                                    fuelConsumption, currentFuel, owner);
+                                break;
+
+                            default:
+                                Console.WriteLine($"Unknown aircraft type in line: {line}");
+                                continue;
+                        }
+
+                        if (newAircraft != null)
+                        {
+                            this.aircraft.Add(newAircraft);
+                            Console.WriteLine($"Loaded aircraft: {newAircraft.GetName()} (ID: {newAircraft.GetID()})");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error loading file: {ex.Message}");
             }
         }
         
