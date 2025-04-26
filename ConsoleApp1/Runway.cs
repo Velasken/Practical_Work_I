@@ -6,7 +6,7 @@ namespace PracticalWotkI
     public class Runway 
     {
         protected string id;
-        protected RunwayStatus status;
+        protected RunwayStatus statusrunway;
 
         protected string CurrentAircraft;
         protected int TicksAvailability = 3;
@@ -21,22 +21,19 @@ namespace PracticalWotkI
         public Runway(string id, RunwayStatus status,string CurrentAircraft)
         {
             this.id = id;
-            this.status = RunwayStatus.Free;
+            this.statusrunway = RunwayStatus.Free;
             this.CurrentAircraft = CurrentAircraft;
 
         }
-        string[,] runways = {
-                {"Runway_1","Free",""},
-                {"Runway_2","Free",""}
-            };
 
         public void RequestRunway(string AircraftId)
         {
-            if (this.status == RunwayStatus.Free)
+            if (this.statusrunway == RunwayStatus.Free)
             {
-                this.status = RunwayStatus.Occupied;
+                this.statusrunway = RunwayStatus.Occupied;
                 this.CurrentAircraft = AircraftId;
                 Console.WriteLine($"{this.id} assigned to aircraft {AircraftId}");
+                
             }
             else
             {
@@ -52,7 +49,7 @@ namespace PracticalWotkI
 
         public RunwayStatus GetStatus()
         {
-            return this.status;
+            return this.statusrunway;
         }
     }
 }

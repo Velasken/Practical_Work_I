@@ -204,10 +204,10 @@ namespace PracticalWotkI
 
                     foreach (var runway in this.runways)
                     {
-                        if (runway.GetStatus() == Runway.RunwayStatus.Free)
+                        if (runway.GetStatus() == Runway.RunwayStatus.Free && aircraft.GetStatus() == Aircraft.Status.Waiting)
                         {
                             runway.RequestRunway(aircraft.GetID());
-                            break;
+                            aircraft.Land();
                         }
                     }
 
@@ -230,9 +230,9 @@ namespace PracticalWotkI
             {
                 Console.WriteLine($"Aircraft Status: {aircraft.GetStatus()}");
             }
-            foreach (Runway runway in runways)
+            foreach (var runway in runways)
             {
-                Console.WriteLine(runway.GetStatus());
+                Console.WriteLine($"{runway.GetID()}: {runway.GetStatus()}");
             }
         }
         

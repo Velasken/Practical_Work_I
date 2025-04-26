@@ -86,6 +86,10 @@ namespace PracticalWotkI
                 this.status = Status.OnGround; // Aterrizaje forzado
             }
         }
+        public void Land()
+        {
+            this.status = Status.Landing;
+        }
         
         public virtual void NewAircraft()
         {
