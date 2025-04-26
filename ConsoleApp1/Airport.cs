@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.Security.Cryptography.X509Certificates;
 
 namespace PracticalWotkI
 {
@@ -59,7 +58,6 @@ namespace PracticalWotkI
             {
                 case 1:
                     Console.WriteLine("Loading aircrafts from file");
-                    airport.LoadFlightsFromFile();
                     break;
                 case 2:
                     Runway runway;
@@ -220,9 +218,18 @@ namespace PracticalWotkI
                     Console.WriteLine($"Aircraft: {aircraft.GetID()}");
                     Console.WriteLine($"Distance to airport: 0 km");
                     Console.WriteLine($"Current fuel: {aircraft.GetCurrentFuel()} L");
+                    foreach (var runway in this.runways)
+                    {
+                        runway.ReleaseRunway(aircraft);
+                    }
+        
+                }
+                else if(aircraft.GetStatus() == Aircraft.Status.OnGround)
+                {
+                    RemoveLandedAircraft();
                 }
             }
-            RemoveLandedAircraft();
+            
         }
 
         public void ShowStatus()
@@ -250,7 +257,7 @@ namespace PracticalWotkI
             try
             {
                 
-                var path = $"../../{fileName}";
+                var path = $"../../../{fileName}";
                 
                 if (!File.Exists(path))
                 {

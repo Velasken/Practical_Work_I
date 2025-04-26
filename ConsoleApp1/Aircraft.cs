@@ -90,10 +90,14 @@ namespace PracticalWotkI
         {
             this.status = Status.Landing;
         }
+        public void Ground()
+        {
+            this.status = Status.OnGround;
+        }
         
         public virtual void NewAircraft()
         {
 
-        }
-    }
+        }
+    }
 }

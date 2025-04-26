@@ -52,6 +52,7 @@ namespace PracticalWotkI
                     }
                 }
                 tick++;
+                Console.Write(tick);
             }
         }
     }

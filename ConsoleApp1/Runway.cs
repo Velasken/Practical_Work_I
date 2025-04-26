@@ -42,6 +42,22 @@ namespace PracticalWotkI
             
         }
 
+        public void ReleaseRunway(Aircraft aircraft)
+        {
+            if(this.statusrunway == RunwayStatus.Occupied)
+            {
+                this.TicksAvailability --;
+            }
+            if (this.TicksAvailability == 0)
+            {
+
+                this.TicksAvailability = 3;
+                this.CurrentAircraft = "";
+                this.statusrunway = RunwayStatus.Free;
+                aircraft.Ground();
+            }
+        }
+
         public string GetID()
         {
             return this.id;
@@ -50,6 +66,6 @@ namespace PracticalWotkI
         public RunwayStatus GetStatus()
         {
             return this.statusrunway;
-        }
-    }
+        }
+    }
 }
