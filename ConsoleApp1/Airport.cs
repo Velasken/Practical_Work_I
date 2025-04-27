@@ -199,7 +199,7 @@ namespace PracticalWotkI
             try
             {
                 
-                var path = $"../../../{fileName}";//File path.
+                var path = $"../../../../Files/{fileName}";//File path.
                 
                 if (!File.Exists(path))//Comprobation of the existence of the file.
                 {

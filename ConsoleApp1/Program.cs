@@ -5,16 +5,19 @@ namespace PracticalWotkI
 {
     public class Program
     {
+        //Main method. Entery point of the program
         public static void Main()
         {
             try
             {
+                //The menu is started
                 Console.WriteLine("--------------------------------------");
                 Console.WriteLine("||||||||||||||| Air UFV ||||||||||||||");
                 Menu menu = new Menu();
 
                 int option = menu.PrintOptions();
 
+                //If the input of the user is out of the bounds, the program ends
                 while (option >= 1 && option <= menu.GetOptions())
                 {
                     Console.Clear();
