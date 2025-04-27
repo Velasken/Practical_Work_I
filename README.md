@@ -27,6 +27,8 @@
 ---
 
 ## Description
+- The simulator is a tick-based system designed to manage and simulate the operations of aircraft approaching and landing at an airport. Each tick represents a 15-minute interval, during which the system updates critical parameters and transitions aircraft through various operational states. The solution is implemented using an object-oriented approach, ensuring modularity and scalability.
+  
 ![classdiagram](https://github.com/user-attachments/assets/616ab7d5-c4c2-47cd-a26d-9a062ddad2c8)
 
 
