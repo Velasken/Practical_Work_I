@@ -8,6 +8,7 @@ namespace PracticalWotkI
     {
         //Creation of a list of options.
         private List<Options> options;
+
         //Creation of the instance of the airport class.
         private Airport airport;
         
@@ -23,30 +24,36 @@ namespace PracticalWotkI
           this.options.Add(new Manual_Start("Start simulation (Manual)"));
           //Adding the options.
        }
+
         //A method to exit the menu.
         public int Exit()
         {
             return this.options.Count + 1;
         }
+
         //A method used to get the options.
         public int GetOptions()
         {
             return this.options.Count;
         }
+
        //A method to print the options.
         public int PrintOptions()
         {
             Console.WriteLine("--------------------------------------");
+
             //A loop to print the options.
            for (int i = 1; i <= this.options.Count; i++)
            {
                 Console.WriteLine($" {i}. {this.options[i - 1].GetName()}");
            }
+
             //Prints the Exit option.
            Console.WriteLine($" {this.Exit()}. Exit");
            Console.WriteLine("--------------------------------------");
            Console.WriteLine("||||||||||||||||||||||||||||||||||||||");
            Console.WriteLine("--------------------------------------");
+
             //Reads the users selection.
            string? tmp = Console.ReadLine();
            if (tmp == "") return this.GetOptions() + 1;
@@ -55,6 +62,7 @@ namespace PracticalWotkI
 
            return (option < 1 || option > this.GetOptions()) ? this.GetOptions() + 1: option;
         }
+        
         //Depending on the user options one of the next cases executes.
         public void Selection(int option)
         {

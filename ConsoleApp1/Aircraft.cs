@@ -6,6 +6,7 @@ namespace PracticalWotkI
     //Creating the class aricraft.
     public class Aircraft
     {
+
         //Delaring the variables.
         protected string name;
         protected string id;
@@ -16,6 +17,7 @@ namespace PracticalWotkI
         protected Status status;
         public enum Status
         {
+
             //Types of status of the aircraft.
             InFlight,
             Waiting,
@@ -25,6 +27,7 @@ namespace PracticalWotkI
 
         public Aircraft(string name, string id, int distance, double fuel_capacity, double fuel_consumption, double current_fuel)
         {
+
             //We give acces to the variables to edit them.
             this.name = name;
             this.id = id;
@@ -34,6 +37,7 @@ namespace PracticalWotkI
             this.current_fuel = current_fuel;
             this.status = Status.InFlight; 
         }
+
         //Some getters to access the variables that we need.
         public string GetName()
         {
@@ -67,6 +71,7 @@ namespace PracticalWotkI
         {
             return this.status;
         }
+
         //Method used to update the distance of the airplane.
         public void UpdateDistance()
         {
@@ -80,6 +85,7 @@ namespace PracticalWotkI
                 }
             }
         }
+
         //Method used to update the fuel of the airplane.
         public void UpdateFuel()
         {
@@ -90,6 +96,7 @@ namespace PracticalWotkI
                 this.status = Status.OnGround; // Aterrizaje forzado
             }
         }
+        
         //Two methods made to update the status of the aircraft.
         public void Land()
         {
