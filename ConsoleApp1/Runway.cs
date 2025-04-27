@@ -9,7 +9,7 @@ namespace PracticalWotkI
         protected RunwayStatus statusrunway;
 
         protected string CurrentAircraft;
-        protected int TicksAvailability = 3;
+        protected int TicksAvailability;
 
         public enum RunwayStatus
         {
@@ -23,7 +23,7 @@ namespace PracticalWotkI
             this.id = id;
             this.statusrunway = RunwayStatus.Free;
             this.CurrentAircraft = CurrentAircraft;
-
+            this.TicksAvailability = 3;
         }
 
         public void RequestRunway(string AircraftId)
@@ -48,7 +48,7 @@ namespace PracticalWotkI
             {
                 this.TicksAvailability --;
             }
-            if (this.TicksAvailability == 0)
+            if (this.TicksAvailability <= 0)
             {
 
                 this.TicksAvailability = 3;

@@ -58,6 +58,7 @@ namespace PracticalWotkI
             {
                 case 1:
                     Console.WriteLine("Loading aircrafts from file");
+                    airport.LoadFlightsFromFile();
                     break;
                 case 2:
                     Runway runway;
@@ -224,12 +225,9 @@ namespace PracticalWotkI
                     }
         
                 }
-                else if(aircraft.GetStatus() == Aircraft.Status.OnGround)
-                {
-                    RemoveLandedAircraft();
-                }
+               
             }
-            
+            RemoveLandedAircraft();
         }
 
         public void ShowStatus()
