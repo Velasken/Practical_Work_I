@@ -37,11 +37,4 @@ namespace PracticalWotkI
         {
         }
     }
-
-    public class Atomatic_Start : Options
-    {
-        public Atomatic_Start(string name) : base(name)
-        {
-        }
-    }
 }

@@ -17,7 +17,6 @@ namespace PracticalWotkI
           this.options.Add(new Load_File("Load flight from file"));
           this.options.Add(new Load_Manual("Load a flight manually"));
           this.options.Add(new Manual_Start("Start simulation (Manual)"));
-          this.options.Add(new Atomatic_Start("Start simulation (Automatic)"));
        }
 
         public int Exit()
@@ -77,9 +76,6 @@ namespace PracticalWotkI
                 case 3:
                     TickSystem tickSystem = new TickSystem(airport);
                     tickSystem.Run();
-                    break;
-                case 4:
-                    Console.WriteLine("Automatic start");
                     break;
             }
         }

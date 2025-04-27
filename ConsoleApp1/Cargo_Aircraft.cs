@@ -25,8 +25,20 @@ namespace PracticalWotkI
         {
             Console.Write("Aircrafts ID: ");
             this.id = Console.ReadLine();
+            if (this.id == "")
+            {
+               Console.WriteLine("ID needed");
+               Console.Write("Aircrafts ID: ");
+               this.id = Console.ReadLine(); 
+            }
             Console.Write("Aircrafts Distance to the airport: ");
             this.distance = Int32.Parse(Console.ReadLine());
+            if (this.distance <= 0)
+            {
+                Console.Write("Distance can't be 0\n");
+                Console.Write("Aircrafts Distance to the airport: ");
+                this.distance = Int32.Parse(Console.ReadLine());
+            }
             Console.Write("Aircrafts fuel capacity: ");
             this.fuel_capacity = Double.Parse(Console.ReadLine());
             Console.Write("Aircrafts fuel consumption: ");
@@ -34,6 +46,12 @@ namespace PracticalWotkI
             this.current_fuel = this.fuel_capacity;
             Console.Write("Maximum load: ");
             this.max_load = Double.Parse(Console.ReadLine());
+            if(this.max_load == 0)
+            {
+                Console.WriteLine("Maximum load needed");
+                Console.Write("Maximum load: ");
+                this.max_load = Double.Parse(Console.ReadLine());
+            }
         }
     }
 }
